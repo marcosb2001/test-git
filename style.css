@@ -1,0 +1,152 @@
+.box {
+    border-radius: 6px;
+    height: 40px;
+    width: 80px;
+    margin: 50px auto;
+}
+
+.box-one {
+    background-color: aquamarine;
+}
+
+.box-two {
+    background-color: blueviolet;
+    /*como agregar transiciones
+    se pueden agregar pero necesitan 2 valores
+    valor 1 transition property
+    valor 2 transition duration*/
+    transition-property: all; /*decide a quien se le aplica del objeto, por default es all (todo el elemento)
+    pero puede ser border y blabla*/
+    transition-duration: 2s;
+
+    /*se puede usar transition: valor1 valor2*/
+    /*transition> all 2s;*/
+}
+
+/*pseudoclase :hover*/
+
+.box:hover {
+    /*transformacion
+    scale, agregar un numero entero sin unidades de medida
+    para modificar el elemento, se multiplica su tamaño (x) veces del tamaño original*/
+    transform: scale(4) ;
+}
+
+.circle1, .circle2, .circle3, .circle4, .circle5 {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 100%;
+}
+
+.circle1 {
+    background-color: blueviolet;
+    transition: all 1.5s;
+    /*curvas de velocidad
+    controla como se mueve el objeto parecido a curvas de blender*/
+    transition-timing-function: linear;
+}
+
+.circle2 {
+    background-color: brown;
+    transition: all 1.5s ease;
+}
+
+.circle3 {
+    background-color: cadetblue;
+    transition: all 1.5s ease-in;
+}
+
+.circle4 {
+    background-color: chocolate;
+    transition: all 1.5s ease-out;
+}
+
+.circle5 {
+    background-color: cornflowerblue;
+    transition: all 1.5s ease-in-out;
+}
+
+
+/*curvas de velocidad
+controla como se mueve el objeto parecido a curvas de blender*/
+.container-circle:hover>div {
+   transform: translateX(400px);
+}
+
+.combinado {
+    background-color: violet;
+    height: 75px;
+    width: 75px;
+    margin: 50px auto;
+
+}
+
+.combinado:hover {
+    transform: rotate(90deg) scale(2) translateY(120px);
+    transition: all 2s; /*recordar q all es por default y a veces no aparece es implicito*/
+}
+
+.animaciones {
+    width: 120px;
+    height: 80px;
+    margin: 50px auto;
+    background-color: yellow;
+}
+
+.animaciones:hover {
+    /*animation-name y animation-duration*/
+    /*reducible a animation: valor1 valor2*/
+    animation-name: changeColor;
+    animation-duration: 4s;
+    /*animation: changeColor 4s;*/
+}
+
+/*fotogramas
+regla keyframes */
+
+@keyframes changeColor{
+    0% {
+        background-color: violet;
+    }
+    15% {
+        background-color: red;
+        border-radius: 50%;
+    }
+    25% {
+        width: 600px;
+    }
+    50% {
+        background-color: turquoise;
+        border: 4px solid black;
+    }
+    100% {
+        background-color: teal;
+    }
+}
+
+.username666 {
+    border-radius: 100%;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    margin: 50px auto;
+}
+
+.username666:hover {
+    animation: theCurse 4s;
+}
+
+@keyframes theCurse {
+    50% {
+        background-color: white;
+        width: 200px;
+    }
+    70% {
+        border-radius: 0%;
+        background-color: purple;
+    }
+    100% {
+        background-color: red;
+    }
+}
